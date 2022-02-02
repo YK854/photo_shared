@@ -21,7 +21,11 @@
 ユーザの撮影した写真を他の人にも見てもらいたいと思い立った時
 
 ## 設計書
-<...>
+- 画面設計
+    - 画面遷移図
+        - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
+    - ワイヤーフレーム
+        - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1eJ0WDbh7LAfBq_Lhzi4PIkZ_fcqpA_sePDnOaCat8zM/edit?usp=sharing>
@@ -35,8 +39,8 @@
 
 ## 使用素材
 - Pexels(著作権フリーの写真)
- - <https://www.pexels.com/ja-jp/>
+    - <https://www.pexels.com/ja-jp/>
 - Bootstrap Icons
- - <https://icons.getbootstrap.jp/>
+    - <https://icons.getbootstrap.jp/>
 - designevo(ロゴ制作)
- - <https://www.designevo.com/>
+    - <https://www.designevo.com/>
