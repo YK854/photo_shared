@@ -26,6 +26,13 @@
         - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
     - ワイヤーフレーム
         - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
+- DB設計
+    - ER図
+        -
+    - テーブル定義書
+        -
+- 詳細設計
+    -
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1eJ0WDbh7LAfBq_Lhzi4PIkZ_fcqpA_sePDnOaCat8zM/edit?usp=sharing>
