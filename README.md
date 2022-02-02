@@ -14,7 +14,7 @@
 現状、人と会うことが制限され、交流する場が少なくなっています。<br>
 そこで、気楽に交流し合える環境が作れればと思い、写真というシンプルな投稿サイトを考えました。<br>
 人は何かテーマがないと話すことをためらってしまうものだと思います。<br>
-その為、何か話のきっかけを作ることができる物が1つでもあれば、<br>それを機に会話の幅が広がっていくと考えています。<br>
+その為、何か話のきっかけを作ることができる物を用意し、<br>それを機に会話の幅が広がっていくと考えています。<br>
 今回、気楽に会話し繋がり合えるサイトがあれば良いなと思い、このテーマにしました。
 
 
@@ -31,8 +31,8 @@
 - 画面設計
     - 画面遷移図
         - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
-    - ワイヤーフレーム
-        - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>
+    <!--- ワイヤーフレーム-->
+    <!--    - <https://drive.google.com/file/d/1pOQZAcpEup2lcaZ_BGCk1PcInUvKpexS/view?usp=sharing>-->
 <!--- DB設計-->
 <!--    - ER図-->
 <!--        --->
