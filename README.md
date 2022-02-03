@@ -35,7 +35,7 @@
     - 画面遷移図
         - <https://drive.google.com/file/d/10YY1O6RzO_IIwb1atUMq5fkuDkLWjZGE/view?usp=sharing>
     - ワイヤーフレーム
-        - <https://drive.google.com/file/d/1mMFUqMcKGciOn8Hr_JxN1J_fpwi2aSe-/view?usp=sharing>
+        - <https://drive.google.com/file/d/1EIGFuOhfYh5YUUdqONo-jaQJbU7SLVzu/view?usp=sharing>
 <!--- DB設計-->
 <!--    - ER図-->
 <!--        --->
