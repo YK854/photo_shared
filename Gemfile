@@ -48,6 +48,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'rubocop', require: false
+  gem 'rubocop-airbnb'
 end
 
 group :test do
@@ -60,3 +65,36 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# ログイン機能
+gem 'devise'
+# 画像投稿用gem
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+# 画像加工用（サイズ調整など）gem
+gem "refile-mini_magick"
+#bootstrapを使用する際に必要
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+#アイコンを使用する際に必要
+gem 'font-awesome-sass', '~> 5.13'
+#ページング機能
+gem 'kaminari','~> 1.2.1'
+# デバックツール group :development内に記載
+# rbファイルではbinding.pry
+# erbファイルでは<% binding.pry %>
+# gem 'pry-rails'
+# gem 'pry-byebug'
+# /
+
+#日本語化対応の際に必要
+gem 'rails-i18n', '~> 5.1'
+
+#環境変数を使用する際に必要
+gem 'dotenv-rails'
+
+#検索機能作成時に必要
+gem 'ransack'
+
+#静的解析ツールgroup :development内に記載
+# gem 'rubocop', require: false
+# gem 'rubocop-airbnb'

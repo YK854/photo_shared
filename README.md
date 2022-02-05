@@ -32,17 +32,18 @@
 
 ## 設計書
 - 画面設計
-    - 画面遷移図
-        - <https://drive.google.com/file/d/10YY1O6RzO_IIwb1atUMq5fkuDkLWjZGE/view?usp=sharing>
-    - ワイヤーフレーム
-        - <https://drive.google.com/file/d/1sXhohOHA9N4qJfevlNFzD2IKcf08RJat/view?usp=sharing>
+  - 画面遷移図
+    - <https://drive.google.com/file/d/10YY1O6RzO_IIwb1atUMq5fkuDkLWjZGE/view?usp=sharing>
+  - ワイヤーフレーム
+    - <https://drive.google.com/file/d/1sXhohOHA9N4qJfevlNFzD2IKcf08RJat/view?usp=sharing>
 - DB設計
-    - ER図
-        - <https://drive.google.com/file/d/1EQe7WsUal0ZZSz0IrlOn2oK285ceTDJH/view?usp=sharing>
-    - テーブル定義書
-        - <https://docs.google.com/spreadsheets/d/1SiIu6EbipzP2mcse3snapJOxRtwTPaoRjOus3EViUkM/edit?usp=sharing>
-<!--- 詳細設計-->
-<!--    --->
+  - ER図
+    - <https://drive.google.com/file/d/1EQe7WsUal0ZZSz0IrlOn2oK285ceTDJH/view?usp=sharing>
+  - テーブル定義書
+    - <https://docs.google.com/spreadsheets/d/1SiIu6EbipzP2mcse3snapJOxRtwTPaoRjOus3EViUkM/edit?usp=sharing>
+- 詳細設計
+  - アプリケーション詳細設計
+    - <https://docs.google.com/spreadsheets/d/1-3QRJWyPzGKFCvbV0BoAieAqyiwjmEj9VRpwDFOvpXc/edit?usp=sharing>
 
 ## チャレンジ要素一覧
 - <https://docs.google.com/spreadsheets/d/1eJ0WDbh7LAfBq_Lhzi4PIkZ_fcqpA_sePDnOaCat8zM/edit?usp=sharing>
