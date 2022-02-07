@@ -75,6 +75,7 @@ gem "refile-mini_magick"
 #bootstrapを使用する際に必要
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 #アイコンを使用する際に必要
 gem 'font-awesome-sass', '~> 5.13'
 #ページング機能
@@ -88,6 +89,8 @@ gem 'kaminari','~> 1.2.1'
 
 #日本語化対応の際に必要
 gem 'rails-i18n', '~> 5.1'
+# deviseの日本語化
+gem 'devise-i18n'
 
 #環境変数を使用する際に必要
 gem 'dotenv-rails'
@@ -98,3 +101,6 @@ gem 'ransack'
 #静的解析ツールgroup :development内に記載
 # gem 'rubocop', require: false
 # gem 'rubocop-airbnb'
+
+# タグ付け用GEM
+gem 'acts-as-taggable-on', '~> 6.0'
