@@ -18,3 +18,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('change', '.custom-file-input', function(event) {
+  const files = this.files;
+  $('.custom-file-label', $(this).parent()).text(files.length ? files[0].name : '');
+});

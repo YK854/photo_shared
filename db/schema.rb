@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2022_02_08_022340) do
     t.string "post_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_comments_on_photo_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -25,6 +27,8 @@ ActiveRecord::Schema.define(version: 2022_02_08_022340) do
     t.integer "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_favorites_on_photo_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_022340) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
