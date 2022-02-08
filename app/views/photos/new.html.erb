@@ -1,2 +1,62 @@
-<h1>Photos#new</h1>
-<p>Find me in app/views/photos/new.html.erb</p>
+<div class="row justify-content-center pb-3">
+  <div class="col-sm-10">
+    <div class="text-center">
+      <h2>ユーザー新規登録</h2>
+    </div>
+    <!--エラーメッセージここから-->
+    <div class="row justify-content-center">
+      <%= render "layouts/errors", obj: @photo %>
+    </div>
+    <!--ここまで-->
+    <div class="form-body pt-4">
+      <%= form_with model:@photo, url:photos_path, local:true do |f| %>
+
+      <!--写真欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :picture, class: "control-label" %>
+          </div>
+          <div class="custom-file col-sm-4 ml-n1">
+            <%= f.attachment_field :picture, class: "custom-file-input" %>
+            <label class="custom-file-label" ></label>
+          </div>
+        </div>
+
+      <!--タイトル欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :title, class: "control-label" %>
+          </div>
+          <div class="col-sm-4 p-0 ml-n1">
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
+        </div>
+
+      <!--タグ欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :tag_list, class: "control-label" %>
+          </div>
+          <div class="col-sm-4 p-0 ml-n1">
+            <%= f.text_field :tag_list, value: @photo.tag_list.join(','), class: "form-control" %>
+          </div>
+        </div>
+
+      <!--説明欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :description, class: "control-label" %>
+          </div>
+          <div class="col-sm-4 p-0 ml-n1">
+            <%= f.text_area :description, class: "form-control" %>
+          </div>
+        </div>
+
+      <!--投稿ボタン-->
+        <div class="text-center">
+          <%= f.submit "新規投稿", class: "btn btn-outline-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
