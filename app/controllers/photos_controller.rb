@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create(photo_params)
+    @photo.user_id = current_user.id
     if @photo.save
       redirect_to new_photo_path
     else
@@ -17,7 +18,8 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[id])
+    @photo = Photo.find(params[:id])
+    @comment = Comment.new
   end
 
   def destroy

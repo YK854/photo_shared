@@ -24,7 +24,7 @@ body{
     color: #432;
 }
 
-// コンテンツの内容が少ない時にfooter下に余白を作らないようにする際に必要
+// コンテンツの内容が少ない時にfooter下に余白にならないよう
 .footer_whitespace_deletion {
   display: flex;
   flex-flow: column;
