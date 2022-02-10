@@ -4,10 +4,10 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.photo_id = @photo.id
     if @comment.save
-      redirect_to photo_path(photo)
+      redirect_to photo_path(@photo)
     else
-      render template: "photos/show"
-      flash[:alert] = "返信に失敗しました"
+      redirect_to photo_path(@photo)
+      flash[:warning] = "コメントの返信に失敗しました"
     end
   end
 

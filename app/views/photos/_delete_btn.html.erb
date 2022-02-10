@@ -1,0 +1,7 @@
+<div class="mb-2 ml-2">
+  <% if photo.user.id == current_user.id %>
+    <%= link_to photo_path(photo), method: :delete, data: { confirm: "投稿を削除しますか？"}, class: "btn btn-outline-danger btn-sm" do %>
+      <i class="bi bi-x-lg"></i>
+    <% end %>
+  <% end %>
+</div>

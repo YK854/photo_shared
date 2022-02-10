@@ -1,0 +1,12 @@
+<div class="d-inline h2 pl-4">
+  <!--ログインしているユーザーが含まれているか判断-->
+  <% if photo.favorited_by?(current_user) %>
+    <%= link_to photo_favorites_path(photo), method: :delete do %>
+      <i class="bi bi-heart-fill text-danger"></i>
+    <% end %>
+  <% else %>
+    <%= link_to photo_favorites_path(photo), method: :post do %>
+      <i class="bi bi-heart text-danger"></i>
+    <% end %>
+  <% end %>
+</div>
