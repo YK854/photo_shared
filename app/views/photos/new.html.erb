@@ -28,7 +28,7 @@
             <%= f.label :title, class: "control-label" %>
           </div>
           <div class="col-sm-4 p-0 ml-n1">
-            <%= f.text_field :title, class: "form-control" %>
+            <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %>
           </div>
         </div>
 
@@ -38,7 +38,7 @@
             <%= f.label :tag_list, class: "control-label" %>
           </div>
           <div class="col-sm-4 p-0 ml-n1">
-            <%= f.text_field :tag_list, value: @photo.tag_list.join(','), class: "form-control" %>
+            <%= f.text_field :tag_list, value: @photo.tag_list.join(','), placeholder: "風景，森林" ,class: "form-control" %>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
             <%= f.label :description, class: "control-label" %>
           </div>
           <div class="col-sm-4 p-0 ml-n1">
-            <%= f.text_area :description, class: "form-control" %>
+            <%= f.text_area :description, placeholder: "説明を入力してください(任意)", class: "form-control" %>
           </div>
         </div>
 
