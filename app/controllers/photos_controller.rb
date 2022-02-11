@@ -7,14 +7,14 @@ class PhotosController < ApplicationController
     @photo = Photo.create(photo_params)
     @photo.user_id = current_user.id
     if @photo.save
-      redirect_to new_photo_path
+      redirect_to photo_path(@photo)
     else
       render :new
     end
   end
 
   def index
-    @photos = Photo.all
+    @photos = Photo.page(params[:page]).per(3)
   end
 
   def show

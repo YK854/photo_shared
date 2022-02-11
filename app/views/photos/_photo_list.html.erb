@@ -1,0 +1,28 @@
+<div class="card-deck row-cols-1 row-cols-sm-3">
+  <% photos.each do |p| %>
+    <div class="col p-0">
+      <div class="card h-100 shadow border border-white">
+        <%= link_to photo_path(p) do %>
+          <%= attachment_image_tag(p, :picture, :fill, 400, 400, class: "bd-placeholder-img card-img-top") %>
+        <% end %>
+        <div class="card-body p-3">
+          <h4 class="card-text text-center">
+            <%= link_to photo_path(p), class: "badge badge-pill badge-light" do %>
+              <%= p.title %>
+            <% end %>
+          </h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center">
+            <%= render "like_comment_count", photo: p %>
+          </li>
+        </ul>
+        <div class="card-footer">
+          <small class="text-muted">
+            投稿日:<%= p.created_at.strftime("%Y年%m月%d日") %>
+          </small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

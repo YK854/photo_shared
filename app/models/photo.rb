@@ -8,8 +8,8 @@ class Photo < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   validates :picture, presence: true
-  validates :title, presence: true
-  validates :description, presence: true
+  validates :title, length: { minimum: 1, maximum: 10 }
+  validates :description, length: { minimum: 0, maximum: 40 }
   validates :tag_list, presence: true
 
   def favorited_by?(user)
