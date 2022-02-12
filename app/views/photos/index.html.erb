@@ -1,10 +1,15 @@
 <div class="row justify-content-center pd-3">
   <div class="col-sm-9">
-    <div class="row">
-
-      <div class="col-sm-3 border">
-        <p>テスト文章</p>
-
+    <div class="row justify-content-end">
+      <div class="col-sm-4">
+        <div class="form-inline">
+          <div class="form-group">
+            <%= search_form_for @search do |f| %>
+              <%= f.select :sorts, {"投稿の新しい順": "created_at DESC", "投稿の古い順": "created_at ASC" },{} ,class: "form-control form-control-sm" %>
+              <%= f.submit "検索", class: "btn btn-outline-secondary btn-sm" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
 

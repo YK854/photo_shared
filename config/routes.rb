@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "photos#new"
+  root to: "photos#index"
 
 # 投稿写真に対しての[いいね]、[コメント]
   resources :photos, only: [:new, :create, :index, :show, :destroy] do
