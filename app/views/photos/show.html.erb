@@ -1,8 +1,10 @@
 <div class="row justify-content-center pb-3">
-  
+
   <div class="col-sm-5">
-    <!--投稿削除ボタン-->
-    <%= render "delete_btn", photo: @photo %>
+    <% if user_signed_in? %>
+      <!--投稿削除ボタン-->
+      <%= render "delete_btn", photo: @photo %>
+    <% end %>
     <%= attachment_image_tag(@photo, :picture, :fill, 400, 400, class: "img-thumbnail shadow") %>
     <div class="mt-3 ml-2">
       <%= attachment_image_tag(@photo.user, :image, :fill, 60, 60, fallback: "person-circle.svg", size: "60x60", class: "rounded-circle") %>
@@ -17,14 +19,14 @@
       <%= render "comment_entry", photo: @photo, comment: @comment %>
     </div>
   </div>
-  
+
   <div class="col-sm-4">
     <!--写真詳欄-->
     <%= render "photo_detail", photo: @photo %>
     <!--コメント一覧-->
     <%= render "comment_index", photo: @photo %>
   </div>
-  
+
   <div class="col-sm-3">
     <p>部分テンプレート</p>
   </div>

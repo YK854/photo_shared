@@ -1,7 +1,17 @@
 <% flash.each do |key, value| %>
-   <p class="alert alert-<%= key %> text-center">
-     <%= value %>
-   </p>
+   <% if key != "alert" && key != "notice" %>
+      <p class="alert alert-<%= key %> text-center">
+        <%= value %>
+      </p>
+   <% elsif key == "notice" %>
+      <p class="alert alert-success text-center">
+        <%= value %>
+      </p>
+   <% else %>
+      <p class="alert alert-warning text-center">
+        <%= value %>
+      </p>
+   <% end %>
 <% end %>
 
 <!--:success, :info, :warning, :danger-->

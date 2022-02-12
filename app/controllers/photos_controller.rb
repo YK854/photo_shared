@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
+
   def new
     @photo = Photo.new
   end
@@ -14,12 +16,13 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.page(params[:page]).per(3)
+    @photos = @q_header.result(distinct: true).page(params[:page]).order("created_at DESC").per(3)
   end
 
   def show
     @photo = Photo.find(params[:id])
     @comment = Comment.new
+    flash.now[:info] = "ログイン済みユーザーのみ「コメント返信」「いいね」が行えます" unless user_signed_in?
   end
 
   def destroy
@@ -33,6 +36,10 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:picture, :title, :description, :tag_list)
+  end
+
+  def search_params
+    params.require(:q).permit(:sorts)
   end
 
 end
