@@ -1,10 +1,10 @@
 <div class="row justify-content-center pb-3">
 
   <div class="col-sm-5">
-    <% if user_signed_in? %>
-      <!--投稿削除ボタン-->
-      <%= render "delete_btn", photo: @photo %>
-    <% end %>
+
+    <!--投稿削除ボタン-->
+    <%= render "delete_btn", photo: @photo %>
+
     <%= attachment_image_tag(@photo, :picture, :fill, 400, 400, class: "img-thumbnail shadow") %>
     <div class="mt-3 ml-2">
       <%= attachment_image_tag(@photo.user, :image, :fill, 60, 60, fallback: "person-circle.svg", size: "60x60", class: "rounded-circle") %>

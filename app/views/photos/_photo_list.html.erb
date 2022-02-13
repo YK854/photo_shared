@@ -1,6 +1,6 @@
 <div class="card-deck row-cols-1 row-cols-sm-3">
   <% photos.each do |p| %>
-    <div class="col p-0">
+    <div class="col p-0 pb-3">
       <div class="card h-100 shadow border border-white">
         <%= link_to photo_path(p) do %>
           <%= attachment_image_tag(p, :picture, :fill, 400, 400, class: "bd-placeholder-img card-img-top") %>
@@ -14,7 +14,7 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item text-center">
-            <%= render "like_comment_count", photo: p %>
+            <%= render "/photos/like_comment_count", photo: p %>
           </li>
         </ul>
         <div class="card-footer">

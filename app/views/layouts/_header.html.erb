@@ -2,14 +2,14 @@
   <div class="container shadow-sm rounded border px-4 py-2">
     <div class="navbar-brand" >
       <%= link_to photos_path do %>
-        <%= image_tag "PS-icon.svg", size: '210x40' %>
+        <%= image_tag "Shared.png"%>
       <% end %>
     </div>
     <div class="ml-auto">
       <ul class="nav navbar-nav mr-5 font-weight-light">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to  "マイページ", new_user_registration_path, class: "nav-link" %>
+            <%= link_to  "マイページ", user_path(current_user), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "投稿一覧", photos_path, class: "nav-link" %>
