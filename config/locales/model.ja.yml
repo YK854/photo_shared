@@ -3,3 +3,9 @@ ja:
     attributes:
         user:
           name: "ユーザー名"
+        # 投稿用日本語
+        photo:
+          picture: "写真"
+          title: "タイトル"
+          description: "説明"
+          tag_list: "タグ"

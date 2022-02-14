@@ -1,2 +1,55 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row justify-content-start pb-3">
+  <div class="col-sm-3">
+    <% if @user.id == current_user.id %>
+      <div class="text-left pl-1">
+        <p class="h3">マイページ</p>
+      </div>
+    <% else %>
+      <div class="text-left pl-1">
+        <p class="h3">ユーザー詳細</p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 pl-5  py-5 d-flex">
+    <%= attachment_image_tag(@user, :image, :fill ,80 ,80, fallback: "person-circle.svg", size: "80x80", class: "rounded-cricle") %>
+    <div class="pt-3 pl-5">
+      <div class="text-center m-0 pb-1 border-bottom">
+        <p class="h4 m-0"><%= @user.name %></p>
+      </div>
+      <% if @user.id == current_user.id %>
+        <div class="text-center m-0 py-1 border-bottom">
+          <p class="h5 m-0"><%= @user.email %></p>
+        </div>
+        <div class="pt-3">
+          <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-primary" %>
+        </div>
+      <% else if %>
+        <div class="btn">
+          <%= link_to "" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-sm-6 border">
+    <p>フォロー…</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-2">
+    <p class="h4">投稿一覧</p>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-11 py-3">
+    <%= render "/photos/photo_list", photos: @photos %>
+  </div>
+  <div class="pt-3">
+    <%= paginate @photos %>
+  </div>
+</div>
