@@ -104,3 +104,8 @@ gem 'ransack'
 
 # タグ付け用GEM
 gem 'acts-as-taggable-on', '~> 6.0'
+#デプロイ時必要
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
