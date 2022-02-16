@@ -1,43 +1,32 @@
-<header class="navbar navbar-expand-lg navbar-light">
-  <div class="container shadow-sm rounded border px-4 py-2">
-    <div class="navbar-brand" >
-      <%= link_to photos_path do %>
+<header class="p-3">
+  <div class="container shadow-sm border-bottom px-3 py-2">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+
+      <%= link_to photos_path, class: "d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" do %>
         <%= image_tag "Shared.png"%>
       <% end %>
-    </div>
-    <div class="ml-auto">
-      <ul class="nav navbar-nav mr-5 font-weight-light">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to  "マイページ", user_path(current_user), class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "投稿一覧", photos_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "新規投稿", new_photo_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "投稿一覧", photos_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "新規投稿", new_photo_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+
+      <div class="ml-auto">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <% if user_signed_in? %>
+            <li><%= link_to  "マイページ", user_path(current_user), class: "nav-link text-muted" %></li>
+            <li><%= link_to "投稿一覧", photos_path, class: "nav-link text-muted" %></li>
+            <li><%= link_to "新規投稿", new_photo_path, class: "nav-link text-muted" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link text-muted" %></li>
+          <% else %>
+            <li><%= link_to "投稿一覧", photos_path, class: "nav-link text-muted" %></li>
+            <li><%= link_to "新規投稿", new_photo_path, class: "nav-link text-muted"%></li>
+            <li><%= link_to "ログイン", new_user_session_path, class: "nav-link text-muted" %></li>
+          <% end %>
+        </ul>
+      </div>
       <form class="form-inline">
         <%= search_form_for q_header, url: photos_path do |f| %>
           <%= f.search_field :title_or_description_cont, class: "form-control mr-sm-2", placeholder: "キーワード検索" %>
           <%= f.submit "検索", class: "btn btn-outline-secondary my-2" %>
         <% end %>
       </form>
+
+    </div>
   </div>
 </header>

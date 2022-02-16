@@ -39,3 +39,19 @@ main {
   border: none;
   color: #432;
 }
+
+// 投稿一覧 投稿画像内に投稿者画像貼り付け
+.example{
+  position: reletive;
+}
+
+.example .user_img{
+  position: absolute;
+  color: white;
+  top: 2%;
+  left: 3%;
+}
+
+.example .photo_img{
+  width: 100%;
+}

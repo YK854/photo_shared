@@ -1,12 +1,12 @@
-<div class="h3 mt-5">
+<div class="h3 mt-5 text-center font-weight-bold">
   <%= photo.title %>
 </div>
-<div class="h6 text-center py-3 border-bottom">
+<div class="h6 text-center text-break text-muted border-bottom py-3">
   <%= photo.description %>
 </div>
 <div class="border-bottom">
   <% photo.tag_list.each do |tag| %>
-  <div class="btn btn-outline-info my-2 p-0 px-2" disabled>
+  <div class="btn btn-outline-info rounded-pill my-2 p-0 px-2" disabled>
     <%= tag %>
   </div>
   <% end %>

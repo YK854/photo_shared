@@ -1,2 +1,52 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="row justify-content-center pb-3">
+  <div class="col-sm-9">
+    <div class="text-center">
+      <h2>ユーザー編集</h2>
+    </div>
+    <!--エラーメッセージここから-->
+    <div class="row justify-content-center">
+      <%= render "layouts/errors", obj: @user %>
+    </div>
+    <!--ここまで-->
+    <div class="form-body pt-4">
+      <%= form_with model:@user, url:user_path, local:true do |f| %>
+
+      <!--プロフィール写真欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :image, class: "control-label" %>
+          </div>
+          <div class="custom-file col-sm-4 ml-n1">
+            <%= f.attachment_field :image, class: "custom-file-input" %>
+            <label class="custom-file-label" data-browse="参照" ></label>
+          </div>
+        </div>
+
+      <!--名前欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :name, class: "control-label" %>
+          </div>
+          <div class="col-sm-4 p-0 ml-n1">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
+
+        <!--メールアドレス欄-->
+        <div class="form-group row justify-content-center">
+          <div class="col-sm-2">
+            <%= f.label :email, class: "control-label" %>
+          </div>
+          <div class="col-sm-4 p-0 ml-n1">
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+        </div>
+
+      <!--保存ボタン-->
+        <div class="text-center">
+          <%= f.submit "変更を保存", class: "btn btn-outline-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
