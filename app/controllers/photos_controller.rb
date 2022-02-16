@@ -17,12 +17,20 @@ class PhotosController < ApplicationController
 
   def index
     @photos = @q_header.result(distinct: true).page(params[:page]).order("created_at DESC").per(3)
+    @user = 
+		# サイドバー表示
+		@user_followings = current_user.followings if user_signed_in?
+
   end
 
   def show
     @photo = Photo.find(params[:id])
     @comment = Comment.new
     flash.now[:info] = "ログイン済みユーザーのみ「コメント返信」「いいね」が行えます" unless user_signed_in?
+
+    # サイドバー表示
+		@user_followings = current_user.followings if user_signed_in?
+
   end
 
   def destroy

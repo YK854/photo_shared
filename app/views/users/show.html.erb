@@ -1,43 +1,72 @@
 <div class="row justify-content-start pb-3">
   <div class="col-sm-3">
-    <% if @user.id == current_user.id %>
-      <div class="text-left pl-1">
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <div class="text-left">
         <p class="h3">マイページ</p>
       </div>
     <% else %>
-      <div class="text-left pl-1">
+      <div class="text-left">
         <p class="h3">ユーザー詳細</p>
       </div>
     <% end %>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-6 pl-5  py-5 d-flex">
-    <%= attachment_image_tag(@user, :image, :fill ,80 ,80, fallback: "person-circle.svg", size: "80x80", class: "rounded-cricle") %>
+<div class="row justify-content-center">
+  <div class="col-sm-8 d-flex justify-content-center">
+    <div>
+      <div class="px-5">
+        <%= link_to user_path(@user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
+          <%= attachment_image_tag(@user, :image, :fill ,80 ,80, fallback: "person-circle.svg", size: "80x80", class: "rounded-circle") %>
+        <% end %>
+      </div>
+      <div class="text-center">
+        <div class="pt-2">
+          <%= link_to user_connection_path(@user), class: "text-secondary" do %>
+            <i class="bi bi-person-plus-fill"></i>フォロー中 :
+            <%= @user.followings.count %>
+          <% end %>
+        </div>
+        <div class="pt-0">
+          <%= link_to user_connection_path(@user), class: "text-secondary" do %>
+            <i class="bi bi-people-fill"></i>フォロワー :
+            <%= @user.followers.count %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <div class="pt-3 pl-5">
       <div class="text-center m-0 pb-1 border-bottom">
         <p class="h4 m-0"><%= @user.name %></p>
       </div>
-      <% if @user.id == current_user.id %>
-        <div class="text-center m-0 py-1 border-bottom">
-          <p class="h5 m-0"><%= @user.email %></p>
-        </div>
-        <div class="pt-3">
-          <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-outline-primary" %>
-        </div>
-      <% else %>
-        <div class="btn">
-          <%= link_to "" %>
-        </div>
+      <% if user_signed_in? %>
+        <% if @user.id == current_user.id %>
+          <div class="text-center m-0 py-1 border-bottom">
+            <p class="h5 m-0"><%= @user.email %></p>
+          </div>
+          <div class="pt-3 text-center">
+            <%= link_to edit_user_path(@user), class: "btn btn-outline-info btn-sm" do %>
+              <i class="bi bi-gear"></i> 編集
+            <% end %>
+          </div>
+        <% else %>
+          <div class="pt-3 text-center">
+            <% if current_user.following?(@user) %>
+              <%= link_to user_relationships_path(@user.id), method: :delete, class: "btn btn-outline-danger btn-sm" do %>
+                <i class="bi bi-person-dash"></i> 解除
+              <% end %>
+            <% else %>
+              <%= link_to user_relationships_path(@user.id), method: :post, class: "btn btn-outline-primary btn-sm" do %>
+                <i class="bi bi-person-plus-fill"></i> フォロー
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
-
-  <div class="col-sm-6 border">
-    <p>フォロー…</p>
-  </div>
 </div>
+
 
 <div class="row">
   <div class="col-sm-2">
