@@ -16,4 +16,16 @@ class Photo < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  def self.search_for(content, method)
+    if method == "perfect"
+      Photo.where(title: content)
+    elsif method == "forward"
+      Photo.where("title LIKE ?", content+"%")
+    elsif method == 'backward'
+      Photo.where("title LIKE ?", "%"+content)
+    else
+      Photo.where("title LIKE ?", "%"+content+"%")
+    end
+  end
+
 end

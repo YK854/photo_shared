@@ -16,11 +16,18 @@ class PhotosController < ApplicationController
   end
 
   def index
-    @photos = @q_header.result(distinct: true).page(params[:page]).order("created_at DESC").per(3)
-    @user = 
-		# サイドバー表示
-		@user_followings = current_user.followings if user_signed_in?
+    @photos = Photo.all
+    @photo_new = @photos.page(params[:photo]).order("created_at DESC").per(6)
 
+		# サイドバー表示
+		@user_all = User.all
+		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
+    if user_signed_in?
+      followings = current_user.followings
+      @user_followings = followings.page(params[:side_followings]).order("created_at DESC").per(8)
+      followers = current_user.followers
+      @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
+    end
   end
 
   def show
@@ -28,9 +35,15 @@ class PhotosController < ApplicationController
     @comment = Comment.new
     flash.now[:info] = "ログイン済みユーザーのみ「コメント返信」「いいね」が行えます" unless user_signed_in?
 
-    # サイドバー表示
-		@user_followings = current_user.followings if user_signed_in?
-
+		# サイドバー表示
+		@user_all = User.all
+		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
+    if user_signed_in?
+      followings = current_user.followings
+      @user_followings = followings.page(params[:side_followings]).order("created_at DESC").per(8)
+      followers = current_user.followers
+      @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
+    end
   end
 
   def destroy
@@ -44,10 +57,6 @@ class PhotosController < ApplicationController
 
   def photo_params
     params.require(:photo).permit(:picture, :title, :description, :tag_list)
-  end
-
-  def search_params
-    params.require(:q).permit(:sorts)
   end
 
 end

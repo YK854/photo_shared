@@ -77,7 +77,6 @@ gem "refile-mini_magick"
 #bootstrapを使用する際に必要
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.3.6'
 #アイコンを使用する際に必要
 gem 'font-awesome-sass', '~> 5.13'
 #ページング機能
@@ -96,9 +95,6 @@ gem 'devise-i18n'
 
 #環境変数を使用する際に必要
 gem 'dotenv-rails'
-
-#検索機能作成時に必要
-gem 'ransack'
 
 #静的解析ツールgroup :development内に記載
 # gem 'rubocop', require: false
