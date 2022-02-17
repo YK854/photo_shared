@@ -1,32 +1,22 @@
+<div class="mb-2">
+  <%= render "layouts/search" %>
+</div>
 <div class="row justify-content-center pd-3">
   <div class="col-sm-9">
-    <div class="row justify-content-end">
-      <div class="col-sm-4">
-        <div class="form-inline">
-          <div class="form-group">
-            <%= search_form_for @search do |f| %>
-              <%= f.select :sorts, {"投稿の新しい順": "created_at DESC", "投稿の古い順": "created_at ASC" },{} ,class: "form-control form-control-sm" %>
-              <%= f.submit "検索", class: "btn btn-outline-secondary btn-sm" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="row justify-content-center">
-      <div class="col-sm-12 py-3 hy-50">
-        <!--写真一覧-->
-        <%= render "photo_list", photos: @photos %>
+      <div class="col-sm-12 pt-3 pb-0">
+        <p class="h2 pb-2">
+          <i class="bi bi-send-fill"></i>
+          投稿一覧 <span class="badge badge-pill badge-light"><全<%= @photos.count %>件></span>
+        </p>
+        <%= render "photo_list", photos: @photo_new %>
       </div>
-      <div class="pt-3">
-        <%= paginate @photos %>
+      <div class="pt-1">
+        <%= paginate @photo_new, :param_name => "photo" %>
       </div>
     </div>
   </div>
-
-  <div class="col-sm-3 border">
-    <% if user_signed_in? %>
-      <%= render "relationships/followings", user_followings: @user_followings %>
-    <% end %>
+  <div class="col-sm-3">
+    <%= render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers %>
   </div>
 </div>

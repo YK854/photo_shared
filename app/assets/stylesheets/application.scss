@@ -24,6 +24,21 @@ body{
     color: #432;
 }
 
+main{
+  // background-image: image-url("main-img/");
+  // min-height:100vh;
+  // background:;
+}
+
+header{
+  // background:;
+}
+
+footer{
+  // background:;
+}
+
+
 // コンテンツの内容が少ない時にfooter下に余白にならないよう
 .footer_whitespace_deletion {
   display: flex;
@@ -37,10 +52,20 @@ main {
 //ページネーションデザイン
 .pagination>li>a {
   border: none;
-  color: #432;
+  color: #343a40;
 }
 
-// 投稿一覧 投稿画像内に投稿者画像貼り付け
+.page-item.active .page-link {
+  background: black;
+  border-radius: 15px;
+}
+
+.side-page .pagination {
+  justify-content:center;
+}
+
+
+// 投稿画像内に投稿者画像貼り付け
 .example{
   position: reletive;
 }
@@ -54,4 +79,36 @@ main {
 
 .example .photo_img{
   width: 100%;
+}
+
+// サイドバータブー
+.side-tab-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-label{
+  color: white;
+  background: LightGray;
+  margin-right: 5px;
+  padding: 3px 23px;
+  order: -1;
+}
+
+.tab-content{
+  width: 100%;
+  display: none;
+}
+
+.tab-swich:checked+.tab-label{
+  background: DeepSkyBlue;
+}
+
+.tab-swich:checked+.tab-label+.tab-content {
+     display: block;
+}
+// ラジオボタン非表示
+.tab-swich {
+    display: none;
 }

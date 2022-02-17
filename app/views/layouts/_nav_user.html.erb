@@ -1,0 +1,14 @@
+<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+  <% if user_signed_in? %>
+    <div class="p-0">
+      <%= link_to user_path(current_user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
+        <%= attachment_image_tag(current_user, :image, :fill ,45 ,45, fallback: "person-circle.svg", size: "45x45", class: "rounded-circle") %>
+      <% end %>
+    </div>
+    <div class="ml-2 pt-2 h5">
+      <%= link_to user_path(current_user), class: "badge badge-pill badge-light" do %>
+        <%= current_user.name %>
+      <% end %>
+    </div>
+  <% end %>
+</ul>
