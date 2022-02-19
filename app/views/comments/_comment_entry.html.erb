@@ -1,0 +1,13 @@
+<div class="form-body pt-3 w-75">
+  <% if user_signed_in? %>
+    <%= form_with(model:[photo, comment], remote: true) do |f| %>
+      <%= f.text_area :post_comment, size: "40x2", placeholder: "45文字以内のコメントを入力して下さい", class: "form-control" %>
+      <%= f.submit "送信", class: "btn btn-outline-primary rounded-pill mt-2" %>
+    <% end %>
+  <% else %>
+    <%= form_with(model:[photo, comment], remote: true) do |f| %>
+      <%= f.text_area :post_comment, size: "40x2", placeholder: "45文字以内のコメントを入力して下さい", class: "form-control" %>
+      <%= f.submit "送信", class: "btn btn-outline-primary rounded-pill mt-2", disabled: true %>
+    <% end %>
+  <% end %>
+</div>

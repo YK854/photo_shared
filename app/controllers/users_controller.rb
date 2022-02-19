@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  
+
   def show
     @user = User.find(params[:id])
     @photos = @user.photos.page(params[:page]).order("created_at DESC").per(3)
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: "成功"
+      redirect_to user_path(@user), notice: "プロフィール内容を更新しました"
     else
       render :edit
     end
