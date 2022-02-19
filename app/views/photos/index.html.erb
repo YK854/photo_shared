@@ -7,7 +7,10 @@
       <div class="col-sm-12 pt-3 pb-0">
         <p class="h2 pb-2">
           <i class="bi bi-send-fill"></i>
-          投稿一覧 <span class="badge badge-pill badge-light"><全<%= @photos.count %>件></span>
+          投稿一覧
+          <span class="badge badge-pill badge-light">
+            <全<%= @photos.count %>件>
+          </span>
         </p>
         <%= render "photo_list", photos: @photo_new %>
       </div>

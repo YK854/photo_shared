@@ -14,15 +14,25 @@
             <% end %>
           </div>
         </div>
-        <div class="card-body p-3">
-          <h4 class="card-text text-center">
+        <div class="card-body pb-0">
+          <h4 class="card-text text-center pb-0">
             <%= link_to photo_path(photo), class: "badge badge-pill badge-light" do %>
               <%= photo.title %>
             <% end %>
           </h4>
+          <div class="card-text">
+            <div class="d-flex flex-wrap">
+              <span class="mr-1"><i class="bi bi-tag-fill"></i></span>
+              <% photo.tag_list.each do |tag| %>
+                <%= link_to photos_path(tag_name: tag), class: "btn btn-outline-info rounded-pill p-0 px-2 mr-1" do %>
+                  <%= tag %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item text-center">
+          <li class="list-group-item text-center pt-0">
             <%= render "/photos/like_comment_count", photo: photo %>
           </li>
         </ul>

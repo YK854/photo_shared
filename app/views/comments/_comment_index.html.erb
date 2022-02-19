@@ -1,0 +1,30 @@
+<div>
+  <% photo.comments.each do |c| %>
+    <div class="row my-2">
+      <div class="col-sm-2 text-center p-0 pl-4">
+        <%= attachment_image_tag(c.user, :image, :fill, 30, 30, fallback: "person-circle.svg", size: "30x30", class: "rounded-circle") %>
+        <% if user_signed_in? %>
+          <% if current_user.id == c.user.id %>
+            <div class="pl-4">
+              <%= link_to photo_comment_path(c.photo_id, c.id), method: :delete, remote: true do %>
+                <div class="text-danger">
+                  <i class="bi bi-x-octagon-fill"></i>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-sm-10">
+        <div class="border rounded-lg rounded-right px-3 py-2">
+          <div class="h6">
+            <%= c.user.name %>
+          </div>
+          <div class="text-break">
+            <%= c.post_comment %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
