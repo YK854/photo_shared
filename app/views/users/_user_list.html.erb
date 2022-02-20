@@ -1,0 +1,26 @@
+<div class="text-center pt-2">
+  <h2>ユーザー</h2>
+  <div class="border-top">
+    <h5 class="pt-1">
+      <span class="badge badge-pill badge-light">
+        登録ユーザー数は<%= @user_all.count %>人
+      </span>
+    </h4>
+    <%= render "layouts/search_user" %>
+    <% users.each do |user| %>
+      <div class="text-left p-1 pt-2 ml-2">
+        <%= link_to user_path(user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
+          <%= attachment_image_tag(user, :image, :fill, 40, 40, fallback: "person-circle.svg", size: "40x40", class: "rounded-circle") %>
+        <% end %>
+        <%= link_to user_path(user), class: "text-secondary rounded-pill btn btn-outline-light" do %>
+          <%= user.name %>
+        <% end %>
+        <div class="text-center">
+          <i class="bi bi-send-fill"></i>：<%= user.photos.count %> |
+          <i class="bi bi-balloon-heart-fill text-danger"></i>：<%= user.favorites.count %> |
+          <i class="bi bi-chat text-primary pr-1"></i>：<%= user.comments.count %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

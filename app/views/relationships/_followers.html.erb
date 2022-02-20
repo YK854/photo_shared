@@ -1,0 +1,21 @@
+<div class="text-center pt-2">
+  <h2>フォロワー</h2>
+  <% if user_followers.exists? %>
+    <div class="border-top">
+      <% user_followers.each do |user| %>
+        <div class="text-left p-1 pt-2 ml-2">
+          <%= link_to user_path(user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
+            <%= attachment_image_tag(user, :image, :fill, 40, 40, fallback: "person-circle.svg", size: "40x40", class: "rounded-circle") %>
+          <% end %>
+          <%= link_to user_path(user), class: "text-secondary rounded-pill btn btn-outline-light" do %>
+            <%= user.name %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="border-top text-left">
+      <p class="text-break">あなたをフォローしている<br>ユーザーはいません</p>
+    </div>
+  <% end %>
+</div>
