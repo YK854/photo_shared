@@ -1,5 +1,5 @@
 <div class="text-center pt-2">
-  <h2>フォロー中</h2>
+  <h3>フォロー中</h3>
   <% if user_followings.exists? %>
     <div class="border-top">
       <% user_followings.each do |user| %>
@@ -14,7 +14,7 @@
       <% end %>
     </div>
   <% else %>
-    <div class="text-left">
+    <div class="border-top text-left">
       <p class="text-break">誰もフォローしていません</p>
     </div>
   <% end %>
