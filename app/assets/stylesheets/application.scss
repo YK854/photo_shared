@@ -19,25 +19,10 @@
 
 // 共通のレイアウト
 body{
-    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
     line-height: 1.7;
     color: #432;
 }
-
-main{
-  // background-image: image-url("main-img/");
-  // min-height:100vh;
-  // background:;
-}
-
-header{
-  // background:;
-}
-
-footer{
-  // background:;
-}
-
 
 // コンテンツの内容が少ない時にfooter下に余白にならないよう
 .footer_whitespace_deletion {
@@ -62,6 +47,10 @@ main {
 
 .side-page .pagination {
   justify-content:center;
+}
+
+.pagination {
+  justify-content: center;
 }
 
 
