@@ -17,16 +17,16 @@ class PhotosController < ApplicationController
 
   def index
     if params[:tag_name]
-      flash[:info] = "「#{params[:tag_name]}」タグの絞り込みを行いました"
+      flash.now[:info] = "「#{params[:tag_name]}」タグの絞り込みを行いました"
       @photos = Photo.tagged_with("#{params[:tag_name]}")
       @photo_new = @photos.page(params[:photo]).order("created_at DESC").per(6)
     else
-      @photos = Photo.all
+      @photos = Photo.includes(:user)
       @photo_new = @photos.page(params[:photo]).order("created_at DESC").per(6)
     end
 
 		# サイドバー表示
-		@user_all = User.all
+		@user_all = User.includes(:photos)
 		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
     if user_signed_in?
       followings = current_user.followings
