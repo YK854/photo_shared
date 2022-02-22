@@ -1,41 +1,40 @@
-<div class="row justify-content-start pb-3">
-  <div class="col-sm-3">
+<div class="row justify-content-center pb-3">
+  <div class="col-12">
     <% if user_signed_in? && @user.id == current_user.id %>
       <div class="text-left">
-        <p class="h3">マイページ</p>
+        <p class="h4">マイページ</p>
       </div>
     <% else %>
       <div class="text-left">
-        <p class="h3">ユーザー詳細</p>
+        <p class="h4">ユーザー詳細</p>
       </div>
     <% end %>
   </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-sm-8 d-flex justify-content-center">
-    <div>
-      <div class="px-5">
+  <div class="col-12 col-sm-10 col-md-8 col-lg-6 d-flex justify-content-around">
+    <div class="col-sm-6">
+      <div class="text-center">
         <%= link_to user_path(@user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
           <%= attachment_image_tag(@user, :image, :fill ,80 ,80, fallback: "person-circle.svg", size: "80x80", class: "rounded-circle") %>
         <% end %>
       </div>
       <div class="text-center">
-        <div class="pt-2">
+        <div class="pt-2 pr-1 pr-sm-0 d-inline-block d-sm-block">
           <%= link_to user_connection_path(@user), class: "text-secondary" do %>
-            <i class="bi bi-person-heart"></i>フォロー中 :
+            <i class="bi bi-person-heart"></i>
+            <span class="d-none d-sm-inline">フォロー中</span> :
             <%= @user.followings.count %>
           <% end %>
         </div>
-        <div class="pt-0">
+        <div class="d-inline-block d-sm-block">
           <%= link_to user_connection_path(@user), class: "text-secondary" do %>
-            <i class="bi bi-person-plus-fill"></i>フォロワー :
+            <i class="bi bi-person-plus-fill"></i>
+            <span class="d-none d-sm-inline">フォロワー</span> :
             <%= @user.followers.count %>
           <% end %>
         </div>
       </div>
     </div>
-    <div class="pt-3 pl-5">
+    <div class="col-sm-5">
       <div class="text-center m-0 pb-1 border-bottom">
         <p class="h4 m-0"><%= @user.name %></p>
       </div>
@@ -66,17 +65,10 @@
     </div>
   </div>
 </div>
-
-
-<div class="row">
-  <div class="col-sm-2">
-    <p class="h4">投稿一覧</p>
-  </div>
-</div>
-
 <div class="row justify-content-center">
-  <div class="col-sm-11 py-3">
-    <%= render "/photos/photo_list", photos: @photos %>
+  <div class="col-12 py-3">
+    <p class="h4 pb-2">投稿一覧</p>
+    <%= render "photo_list", photos: @photos %>
   </div>
   <div class="pt-3">
     <%= paginate @photos %>
