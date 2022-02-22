@@ -1,4 +1,8 @@
 <div class="h3 mt-5 text-center font-weight-bold">
+  <span class="d-none d-md-none d-sm-inline-block">
+    <!--投稿削除ボタン-->
+    <%= render "delete_btn", photo: @photo %>
+  </span>
   <%= photo.title %>
 </div>
 <div class="h6 text-center text-break text-muted border-bottom py-3">

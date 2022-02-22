@@ -1,56 +1,65 @@
 <div class="row justify-content-center pb-3">
-  <div class="col-sm-9">
+  <div class="col-12">
     <div class="text-center">
-      <h2>ユーザー新規登録</h2>
+      <h3>ユーザー新規登録</h3>
     </div>
     <!--エラーメッセージここから-->
     <div class="row justify-content-center">
       <%= render "layouts/errors", obj: @photo %>
     </div>
     <!--ここまで-->
-    <div class="form-body pt-4">
+    <div class="pt-4 mx-2">
       <%= form_with model:@photo, url:photos_path, local:true do |f| %>
 
       <!--写真欄-->
         <div class="form-group row justify-content-center">
-          <div class="col-sm-2">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :picture, class: "control-label" %>
           </div>
-          <div class="custom-file col-sm-4 ml-n1">
-            <%= f.attachment_field :picture, class: "custom-file-input" %>
-            <label class="custom-file-label" data-browse="参照" ></label>
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <%= f.attachment_field :picture %>
           </div>
         </div>
 
       <!--タイトル欄-->
         <div class="form-group row justify-content-center">
-          <div class="col-sm-2">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :title, class: "control-label" %>
           </div>
-          <div class="col-sm-4 p-0 ml-n1">
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="bi bi-card-heading"></i></span>
+            </div>
             <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %>
           </div>
         </div>
 
       <!--タグ欄-->
         <div class="form-group row justify-content-center">
-          <div class="col-sm-2">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :tag_list, class: "control-label" %>
           </div>
-          <div class="col-sm-4 p-0 ml-n1">
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="bi bi-tag-fill"></i></span>
+            </div>
             <%= f.text_field :tag_list, value: @photo.tag_list.join(','), placeholder: "風景，森林" ,class: "form-control" %>
           </div>
         </div>
 
       <!--説明欄-->
         <div class="form-group row justify-content-center">
-          <div class="col-sm-2">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :description, class: "control-label" %>
           </div>
-          <div class="col-sm-4 p-0 ml-n1">
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="bi bi-card-text"></i></span>
+            </div>
             <%= f.text_area :description, placeholder: "説明を入力してください(任意)", class: "form-control" %>
           </div>
         </div>
+
 
       <!--投稿ボタン-->
         <div class="text-center">

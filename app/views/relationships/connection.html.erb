@@ -1,14 +1,19 @@
-<div class="row justify-content-around">
-  <div class="col-sm-3 pt-1 pb-5">
-    <%= render "followings", user_followings: @user_followings %>
-    <div class="side-page">
-      <%= paginate @user_followings, :param_name => "side_followings" %>
-    </div>
-  </div>
-  <div class="col-sm-3 pt-1 pb-5">
-    <%= render "followers", user_followers: @user_followers %>
-    <div class="side-page">
-      <%= paginate @user_followers, :param_name => "side_followers" %>
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="row justify-content-center justify-content-sm-around">
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 pt-1 pb-5">
+        <%= render "followings", user_followings: @user_followings %>
+        <div class="side-page pt-3">
+          <%= paginate @user_followings, :param_name => "side_followings" %>
+        </div>
+      </div>
+      <div class="col-8 col-sm-6 col-md-4 col-lg-3 pt-1 pb-5">
+        <%= render "followers", user_followers: @user_followers %>
+        <div class="side-page pt-3">
+          <%= paginate @user_followers, :param_name => "side_followers" %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
