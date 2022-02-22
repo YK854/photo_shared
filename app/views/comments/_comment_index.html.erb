@@ -1,7 +1,7 @@
 <div>
   <% photo.comments.each do |c| %>
     <div class="row my-2">
-      <div class="col-sm-2 text-center p-0 pl-4">
+      <div class="col-2 text-center p-0 pl-4">
         <%= attachment_image_tag(c.user, :image, :fill, 30, 30, fallback: "person-circle.svg", size: "30x30", class: "rounded-circle") %>
         <% if user_signed_in? %>
           <% if current_user.id == c.user.id %>
@@ -15,7 +15,7 @@
           <% end %>
         <% end %>
       </div>
-      <div class="col-sm-10">
+      <div class="col-10">
         <div class="border rounded-lg rounded-right px-3 py-2">
           <div class="h6">
             <%= c.user.name %>
