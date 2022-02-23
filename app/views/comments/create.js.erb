@@ -1,5 +1,0 @@
-$("#photo_<%= @photo.id %> .comment-entry").html("<%= j(render "comments/comment_entry", photo: @photo, comment: @comment) %>");
-$(".comment-index").html("<%= j(render "comments/comment_index", photo: @photo) %>");
-$("#photo_<%= @photo.id %> .link-comment").html("<%= j(render "photos/like_comment_count", photo: @photo) %>");
-$("#comment_post_comment").val("");
-$("#user_<%= @photo.user.id %>").html("<%= j(render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers) %>");

@@ -1,3 +1,0 @@
-$("#photo_<%= @photo.id %> .favorite-btn").html("<%= j(render "favorites/favorite-btn", photo: @photo) %>");
-$("#photo_<%= @photo.id %> .link-comment").html("<%= j(render "photos/like_comment_count", photo: @photo) %>");
-$("#user_<%= @photo.user.id %>").html("<%= j(render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers) %>");
