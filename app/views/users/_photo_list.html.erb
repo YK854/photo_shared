@@ -1,0 +1,47 @@
+<div class="card-deck row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+  <% photos.each do |photo| %>
+    <div class="col p-0 pb-3">
+      <div class="mr-2 shadow border border-white">
+        <div class="example">
+          <div class ="photo_img">
+            <%= link_to photo_path(photo) do %>
+              <%= attachment_image_tag(photo, :picture, :fill, 400, 400, class: "bd-placeholder-img card-img-top") %>
+            <% end %>
+          </div>
+          <div class="user_img border border-white rounded-circle">
+            <%= link_to user_path(photo.user_id) do %>
+              <%= attachment_image_tag(photo.user, :image, :fill ,40 , 40, fallback: "person-circle.svg", size: "40x40", class: "rounded-circle") %>
+            <% end %>
+          </div>
+        </div>
+        <div class="card-body pb-0">
+          <h4 class="card-text text-center pb-0">
+            <%= link_to photo_path(photo), class: "badge badge-pill badge-light" do %>
+              <%= photo.title %>
+            <% end %>
+          </h4>
+          <div class="card-text">
+            <div class="d-flex flex-wrap">
+              <span class="mr-1"><i class="bi bi-tag-fill"></i></span>
+              <% photo.tag_list.each do |tag| %>
+                <%= link_to photos_path(tag_name: tag), class: "btn btn-outline-info rounded-pill p-0 px-2 mr-1" do %>
+                  <%= tag %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center pt-0">
+            <%= render "/photos/like_comment_count", photo: photo %>
+          </li>
+        </ul>
+        <div class="card-footer p-0 pl-3 py-1">
+          <small class="text-muted">
+            投稿日:<%= photo.created_at.strftime("%Y年%m月%d日") %>
+          </small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

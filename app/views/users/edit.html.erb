@@ -1,0 +1,57 @@
+<div class="row justify-content-center pb-3">
+  <div class="col-12">
+    <div class="text-center">
+      <h2>ユーザー編集</h2>
+    </div>
+    <!--エラーメッセージここから-->
+    <div class="row justify-content-center">
+      <%= render "layouts/errors", obj: @user %>
+    </div>
+    <!--ここまで-->
+    <div class="pt-4 mx-2">
+      <%= form_with model:@user, url:user_path, local:true do |f| %>
+
+      <!--プロフィール写真欄-->
+        <div class="form-group row justify-content-center">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-left col-lg-2">
+            <%= f.label :image, class: "control-label" %>
+          </div>
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <%= f.attachment_field :image %>
+          </div>
+        </div>
+
+      <!--名前欄-->
+        <div class="form-group row justify-content-center">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-left col-lg-2">
+            <%= f.label :name, class: "control-label" %>
+          </div>
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-user"></i></span>
+            </div>
+            <%= f.text_field :name, class:"form-control", placeholder:"ユーザー名"%>
+          </div>
+        </div>
+
+        <!--メールアドレス欄-->
+        <div class="form-group row justify-content-center">
+          <div class="d-none d-sm-block col-sm-4 col-md-3 text-left col-lg-2">
+            <%= f.label :email, class: "control-label" %>
+          </div>
+          <div class="input-group col-sm-6 col-md-6 col-lg-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-envelope"></i></span>
+            </div>
+            <%= f.text_field :email, class: "form-control", placeholder:"メールアドレス"%>
+          </div>
+        </div>
+
+      <!--保存ボタン-->
+        <div class="text-center">
+          <%= f.submit "変更を保存", class: "btn btn-outline-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

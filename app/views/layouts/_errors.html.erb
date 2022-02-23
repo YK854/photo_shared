@@ -1,0 +1,13 @@
+<% if obj.errors.any? %>
+  <div id="error_explanation" class="w-50">
+    <div class="alert alert-danger pb-0" role="alert">
+        <ul class=" pl-0 text-center">
+        ---------------------------------
+        <% obj.errors.full_messages.each do |message| %>
+          <dd><%= message %></dd>
+        <% end %>
+        ---------------------------------
+        </ul>
+    </div>
+  </div>
+<% end %>
