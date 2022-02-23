@@ -1,7 +1,0 @@
-{
-  "name": "photo_shared",
-  "private": true,
-  "dependencies": {
-    "bootstrap-icons": "^1.8.1"
-  }
-}
