@@ -1,0 +1,6 @@
+ja:
+  views:
+    devise:
+      registrations:
+        new:
+          name: "ユーザー名"

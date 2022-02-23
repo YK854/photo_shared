@@ -1,0 +1,25 @@
+<div class="pt-3">
+  <% if user_signed_in? %>
+    <%= form_with(model:[photo, comment], remote: true) do |f| %>
+      <div class="form-row justify-content-center justify-content-md-start">
+        <div class="col-8 col-md-9">
+          <%= f.text_area :post_comment, size: "40x2", placeholder: "45文字以内のコメントを入力して下さい", class: "form-control" %>
+          </div>
+        <div class="col-1 col-md-1">
+          <%= f.submit "送信", class: "btn btn-outline-primary rounded-pill mt-2" %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <%= form_with(model:[photo, comment], remote: true) do |f| %>
+      <div class="form-row">
+        <div class="col-8 col-md-9">
+          <%= f.text_area :post_comment, size: "40x2", placeholder: "45文字以内のコメントを入力して下さい", class: "form-control" %>
+        </div>
+        <div class="col-1 col-md-1">
+          <%= f.submit "送信", class: "btn btn-outline-primary rounded-pill mt-2", disabled: true %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
