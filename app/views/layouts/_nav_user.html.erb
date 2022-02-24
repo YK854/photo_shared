@@ -1,4 +1,4 @@
-<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+<div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
   <% if user_signed_in? %>
     <div class="p-0">
       <%= link_to user_path(current_user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
@@ -11,4 +11,4 @@
       <% end %>
     </div>
   <% end %>
-</ul>
+</div>

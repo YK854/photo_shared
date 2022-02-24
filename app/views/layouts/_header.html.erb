@@ -1,7 +1,6 @@
 <header class="py-2">
   <div class="container px-0 py-2">
     <nav class="navbar navbar-expand-lg navbar-light px-1">
-
       <%= link_to photos_path, class: "navbar-brand" do %>
         <%= image_tag "Shared.png"%>
       <% end %>
@@ -9,9 +8,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-
-        <ul class="navbar-nav">
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
+          <ul class="navbar-nav">
             <li class="nav-item mr-1">
               <%= render "layouts/nav_user" %>
             </li>
@@ -35,7 +33,9 @@
               <i class="bi bi-door-closed-fill"></i> ログアウト
               <% end %>
             </li>
-          <% else %>
+          </ul>
+        <% else %>
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item mr-1">
               <%= link_to photos_path, class: "nav-link" do %>
                 <i class="bi bi-images"></i> 投稿一覧
@@ -51,8 +51,8 @@
                 <i class="bi bi-door-open-fill"></i> ログイン
               <% end %>
             </li>
-          <% end %>
-        </ul>
+          </ul>
+        <% end %>
       </div>
     </nav>
   </div>

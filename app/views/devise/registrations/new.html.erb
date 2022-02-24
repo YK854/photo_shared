@@ -1,14 +1,13 @@
 <div class="row justify-content-center pb-3">
+  <!--エラーメッセージ-->
+  <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+    <%= render "layouts/errors", obj: resource %>
+  </div>
   <div class="col-12">
     <div class="text-center">
       <h2>ユーザー新規登録</h2>
     </div>
-    <!--エラーメッセージここから-->
-    <div class="row justify-content-center">
-      <%= render "layouts/errors", obj: resource %>
-    </div>
-    <!--ここまで-->
-    <div class="form-body pt-4">
+    <div class="pt-4">
       <%= form_with(model:[@user], url: user_registration_path, local: true) do |f| %>
         <!--ユーザー名入力欄-->
         <div class="form-group row justify-content-center">
@@ -22,7 +21,6 @@
             <%= f.text_field :name, autofocus: true, class: "form-control" %>
           </div>
         </div>
-
         <!--メールアドレス入力欄-->
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
@@ -35,7 +33,6 @@
             <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
           </div>
         </div>
-
         <!--パスワード入力欄-->
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
@@ -48,7 +45,6 @@
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>
         </div>
-
         <!--確認用パスワード入力欄-->
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
@@ -61,9 +57,7 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
           </div>
         </div>
-
-
-        <div class="text-center ml-5">
+        <div class="text-center">
           <%= f.submit "ユーザー登録", class: "btn btn-outline-success" %>
         </div>
       <% end %>
