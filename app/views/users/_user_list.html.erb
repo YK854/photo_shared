@@ -1,4 +1,4 @@
-<div class="text-center pt-2">
+<div class="text-center pt-2 N">
   <h3>ユーザー</h3>
   <div class="border-top">
     <h5 class="pt-1">
@@ -17,8 +17,8 @@
         <% end %>
         <div class="text-center">
           <i class="bi bi-send-fill"></i>：<%= user.photos.count %> |
-          <i class="bi bi-balloon-heart-fill text-danger"></i>：<%= user.favorites.count %> |
-          <i class="bi bi-chat-dots-fill text-info pr-1"></i>：<%= user.comments.count %>
+          <i class="bi bi-balloon-heart-fill color-like"></i>：<%= user.favorites.count %> |
+          <i class="bi bi-chat-dots-fill color-commment pr-1"></i>：<%= user.comments.count %>
         </div>
       </div>
     <% end %>

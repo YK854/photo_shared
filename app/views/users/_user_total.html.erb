@@ -29,8 +29,8 @@
       </div>
     </div>
   <% end %>
-<% unless user_signed_in? %>
-  <%= render "users/user_list", users: users %>
-  <%= paginate users, :param_name => "side_user" %>
-<% end %>
+  <% unless user_signed_in? %>
+    <%= render "users/user_list", users: users %>
+    <%= paginate users, :param_name => "side_user" %>
+  <% end %>
 </div>

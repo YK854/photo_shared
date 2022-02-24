@@ -22,6 +22,7 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
     line-height: 1.7;
     color: #432;
+    background:#ffffff;
 }
 
 // コンテンツの内容が少ない時にfooter下に余白にならないよう
@@ -41,7 +42,7 @@ main {
 }
 
 .page-item.active .page-link {
-  background: black;
+  background: #048ABF;
   border-radius: 15px;
 }
 
@@ -79,7 +80,7 @@ main {
 
 .tab-label{
   color: white;
-  background: LightGray;
+  background: #048ABF;
   margin-right: 5px;
   padding: 3px 23px;
   order: -1;
@@ -91,7 +92,7 @@ main {
 }
 
 .tab-swich:checked+.tab-label{
-  background: DeepSkyBlue;
+  background: #81bcd4;
 }
 
 .tab-swich:checked+.tab-label+.tab-content {
@@ -100,4 +101,19 @@ main {
 // ラジオボタン非表示
 .tab-swich {
     display: none;
+}
+
+// いいね/コメント色
+.color-like{
+  color: #D90404;
+}
+
+.color-commment{
+  color: #048ABF;
+}
+
+//
+.rounded-top-css {
+    border-top-left-radius: 2rem !important;
+    border-top-right-radius: 2rem !important;
 }
