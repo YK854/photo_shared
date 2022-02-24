@@ -9,15 +9,14 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
-
   <body class="footer_whitespace_deletion">
     <!--ヘッダー-->
     <%= render "layouts/header" %>
-    <!--共通デザイン-->
+    <!--コンテンツ-->
     <main>
       <div class="container">
         <div class="mt-lg-3">
-          <%= render "layouts/flash" %>
+          <span id="flash"><%= render "layouts/flash" %></span>
           <%= yield %>
         </div>
       </div>

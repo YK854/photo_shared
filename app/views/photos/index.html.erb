@@ -1,4 +1,16 @@
 <div class="row justify-content-center pd-3">
+  <div class="col-sm-12 col-md-12 col-lg-12 d-none d-sm-block">
+    <% if !@tag_exists %>
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <%= render"carousel_like", photo_like_active: @photo_like_active, photo_like: @photo_like %>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-6">
+        <%= render"carousel_comment", photo_comment_active: @photo_comment_active, photo_comment: @photo_comment %>
+      </div>
+    </div>
+    <% end %>
+  </div>
   <div class="col-sm-12 col-md-12 col-lg-9">
     <div class="row justify-content-center">
       <div class="col-12 pt-3 pb-0">

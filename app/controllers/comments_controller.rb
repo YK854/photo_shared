@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
     @photo = Photo.find(params[:photo_id])
     @comment = @photo.comments.find(params[:id])
     if @comment.destroy
-      flash[:info] = "コメントを削除しました"
+      flash.now[:warning] = "コメントを削除しました"
 
       # サイドバー表示
       @user_all = User.all
@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
       end
 
     else
-      flash[:warning] = "コメントの削除に失敗しました"
+      flash.now[:warning] = "コメントの削除に失敗しました"
       redirect_to photo_path(@photo)
     end
   end
