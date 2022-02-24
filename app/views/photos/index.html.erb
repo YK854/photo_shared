@@ -2,12 +2,14 @@
   <div class="col-sm-12 col-md-12 col-lg-12 d-none d-sm-block">
     <% if !@tag_exists %>
     <div class="row">
+      <% if !@photo_like_active.nil? && !@photo_comment_active.nil? %>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <%= render"carousel_like", photo_like_active: @photo_like_active, photo_like: @photo_like %>
       </div>
       <div class="col-sm-6 col-md-6 col-lg-6">
         <%= render"carousel_comment", photo_comment_active: @photo_comment_active, photo_comment: @photo_comment %>
       </div>
+      <% end %>
     </div>
     <% end %>
   </div>
