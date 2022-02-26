@@ -2,22 +2,17 @@
 <div class="text-center mb-3">
   <div class="h4 m-0 pb-2"><i class="bi bi-balloon-heart-fill color-like"></i>いいね数上位</div>
   <div id="good_upper" class="carousel slide" data-ride="false" data-interval="5000">
-    <ol class="carousel-indicators">
-      <li data-target="#good_upper" data-slide-to="0" class="active"></li>
-      <li data-target="#good_upper" data-slide-to="1"></li>
-      <li data-target="#good_upper" data-slide-to="2"></li>
-    </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="card border border-secondary mb-3">
-          <div class="row no-gutters pr-2">
-            <div class="col-lg-7">
+        <div class="card border-card in-shadow mb-3">
+          <div class="row no-gutters p-1">
+            <div class="col-sm-12 col-lg-7">
               <%= link_to photo_path(photo_like_active) do %>
-                <%= attachment_image_tag(photo_like_active, :picture, :fill, 250, 250, class: "bd-placeholder-img card-img-top") %>
+                <%= attachment_image_tag(photo_like_active, :picture, :fill, 250, 250, class: "bd-placeholder-img card-img-top h-100") %>
               <% end %>
             </div>
-            <div class="col-lg-5">
-              <div class="card-body">
+            <div class="col-sm-12 col-lg-5 card-content">
+              <div class="card-body pb-0">
                 <h5 class="card-title"><%= photo_like_active.title %></h5>
                 <p class="card-text"><%= photo_like_active.description %></p>
                 <h4 class="card-text mt-5"><%= render "/photos/like_comment_count", photo: photo_like_active %></h4>
@@ -29,15 +24,15 @@
       </div>
       <% photo_like.each do |like| %>
         <div class="carousel-item">
-          <div class="card border border-secondary mb-3">
-            <div class="row no-gutters pr-2">
-              <div class="col-lg-7">
+          <div class="card border-card in-shadow mb-3">
+            <div class="row no-gutters p-1">
+              <div class=" col-sm-12 col-lg-7">
                 <%= link_to photo_path(like) do %>
-                  <%= attachment_image_tag(like, :picture, :fill, 250, 250, class: "bd-placeholder-img card-img-top") %>
+                  <%= attachment_image_tag(like, :picture, :fill, 250, 250, class: "bd-placeholder-img card-img-top h-100") %>
                 <% end %>
               </div>
-              <div class="col-lg-5">
-                <div class="card-body">
+              <div class="col-sm-12 col-lg-5 card-content">
+                <div class="card-body pb-0">
                   <h5 class="card-title"><%= like.title %></h5>
                   <p class="card-text"><%= photo_like_active.description %></p>
                   <h4 class="card-text mt-5"><%= render "/photos/like_comment_count", photo: like %></h4>

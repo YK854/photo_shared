@@ -117,3 +117,19 @@ main {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
 }
+
+.border-card {
+  border-style: none;
+}
+
+.in-shadow {
+  box-shadow: 0 0 10px 0px rgba( 100, 100, 100, 0.5), inset 0 0 0 5px #cae0f3;
+ }
+
+ .page-title{
+   font-size: 2rem;
+   font-family: 'Philosopher', serif;
+   text-transform: uppercase;
+   font-weight: normal;
+
+ }
