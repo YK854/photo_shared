@@ -2,7 +2,7 @@
 
 ![photo_shared](https://user-images.githubusercontent.com/95330893/155886080-4c8fcdb3-4e9c-4c8d-8761-fc2827c4bb38.jpg)
 
-## ホームページへ
+## ページへ移動する
 - [Photo_Shared](13.114.251.156)
 
 ## サイト概要
