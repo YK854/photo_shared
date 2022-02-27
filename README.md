@@ -53,6 +53,6 @@
 - IDE：Cloud9
 
 ## 使用素材
-- [Pexels(著作権フリーの写真)](<https://www.pexels.com/ja-jp/>)
+- [Pexels(著作権フリー写真)](<https://www.pexels.com/ja-jp/>)
 - [Bootstrap Icons](<https://icons.getbootstrap.jp/>)
 - [Adobe Creative Cloud Express](<https://express.adobe.com/ja-JP/sp/>)
