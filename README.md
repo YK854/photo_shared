@@ -56,7 +56,3 @@
 - [Pexels(著作権フリーの写真)](<https://www.pexels.com/ja-jp/>)
 - [Bootstrap Icons](<https://icons.getbootstrap.jp/>)
 - [Adobe Creative Cloud Express](<https://express.adobe.com/ja-JP/sp/>)
-
-## 別途使用ソフト
-- Photoshop
-- Illustrator
