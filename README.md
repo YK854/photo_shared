@@ -45,6 +45,10 @@
 - 詳細設計
   - [アプリケーション詳細設計](<https://docs.google.com/spreadsheets/d/1-3QRJWyPzGKFCvbV0BoAieAqyiwjmEj9VRpwDFOvpXc/edit?usp=sharing>)
 
+## インフラ設計書
+- [AWSインフラ設計書](<https://docs.google.com/spreadsheets/d/1FJnHaSvM-Muv_-7TGS_a4dhrjN7UPXa3SINVWqxUZgk/edit?usp=sharing>)
+- [AWS構成図](<https://drive.google.com/file/d/125XMmFZF9274YfoXK0PuzzBTz2RYthQ6/view?usp=sharing>)
+
 ## チャレンジ要素一覧
 - [チャレンジ要素](<https://docs.google.com/spreadsheets/d/1eJ0WDbh7LAfBq_Lhzi4PIkZ_fcqpA_sePDnOaCat8zM/edit?usp=sharing>)
 
