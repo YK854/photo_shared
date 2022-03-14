@@ -17,7 +17,8 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// 共通のレイアウト
+/* 共通部分
+------------------------------- */
 body{
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
     line-height: 1.7;
@@ -25,7 +26,7 @@ body{
     background:#ffffff;
 }
 
-// コンテンツの内容が少ない時にfooter下に余白にならないよう
+/* コンテンツの内容が少ない時にfooter下に余白にならないよう */
 .footer_whitespace_deletion {
   display: flex;
   flex-flow: column;
@@ -35,7 +36,7 @@ main {
   flex: 1;
 }
 
-//ページネーションデザイン
+/* ページネーションデザイン */
 .pagination>li>a {
   border: none;
   color: #343a40;
@@ -55,7 +56,7 @@ main {
 }
 
 
-// 投稿画像内に投稿者画像貼り付け
+/* 投稿画像内に投稿者画像貼り付け */
 .example{
   position: reletive;
 }
@@ -71,7 +72,7 @@ main {
   width: 100%;
 }
 
-// サイドバータブー
+/* サイドバータブー */
 .side-tab-wrap{
   display: flex;
   flex-wrap: wrap;
@@ -98,12 +99,12 @@ main {
 .tab-swich:checked+.tab-label+.tab-content {
      display: block;
 }
-// ラジオボタン非表示
+/* ラジオボタン非表示 */
 .tab-swich {
     display: none;
 }
 
-// いいね/コメント色
+/* いいね/コメント色 */
 .color-like{
   color: #D90404;
 }
@@ -112,7 +113,7 @@ main {
   color: #048ABF;
 }
 
-//
+/* フォロー/フォロワ一覧 */
 .rounded-top-css {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
@@ -124,12 +125,11 @@ main {
 
 .in-shadow {
   box-shadow: 0 0 10px 0px rgba( 100, 100, 100, 0.5), inset 0 0 0 5px #cae0f3;
- }
+}
 
- .page-title{
-   font-size: 2rem;
-   font-family: 'Philosopher', serif;
-   text-transform: uppercase;
-   font-weight: normal;
-
- }
+.page-title{
+ font-size: 2rem;
+ font-family: 'Philosopher', serif;
+ text-transform: uppercase;
+ font-weight: normal;
+}

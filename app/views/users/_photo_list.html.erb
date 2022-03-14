@@ -2,6 +2,7 @@
   <% photos.each do |photo| %>
     <div class="col p-0 pb-3">
       <div class="mr-2 shadow border border-white">
+        
         <div class="example">
           <div class ="photo_img">
             <%= link_to photo_path(photo) do %>
@@ -14,6 +15,7 @@
             <% end %>
           </div>
         </div>
+        
         <div class="card-body pb-0">
           <h4 class="card-text text-center pb-0">
             <%= link_to photo_path(photo), class: "badge badge-pill badge-light" do %>
@@ -31,16 +33,21 @@
             </div>
           </div>
         </div>
+        
+        <!-- いいね｜コメント -->
         <ul class="list-group list-group-flush">
           <li class="list-group-item text-center pt-0">
+            <!-- [部分テンプレート]いいね｜コメント -->
             <%= render "/photos/like_comment_count", photo: photo %>
           </li>
         </ul>
+        
         <div class="card-footer p-0 pl-3 py-1">
           <small class="text-muted">
             投稿日:<%= photo.created_at.strftime("%Y年%m月%d日") %>
           </small>
         </div>
+        
       </div>
     </div>
   <% end %>

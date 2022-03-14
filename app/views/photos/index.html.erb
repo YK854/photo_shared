@@ -1,21 +1,30 @@
 <div class="row justify-content-center pd-3">
+  
+  <!--aboutスライド-->
   <div class="col-xl-12 mb-3 d-none d-xl-block">
+    <!-- [部分テンプレート]aboutスライド -->
     <%= render "carousel_top" %>
   </div>
+  
+  <!-- 上位投稿表示 -->
   <div class="col-sm-12 col-md-12 col-lg-12">
     <% if !@tag_exists %>
-    <div class="row justify-content-around">
-      <% if !@photo_like_active.nil? && !@photo_comment_active.nil? %>
-      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
-        <%= render"carousel_like", photo_like_active: @photo_like_active, photo_like: @photo_like %>
+      <div class="row justify-content-around">
+        <% if !@photo_like_active.nil? && !@photo_comment_active.nil? %>
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
+            <!--[部分テンプレート]いいね数上位-->
+            <%= render"carousel_like", photo_like_active: @photo_like_active, photo_like: @photo_like %>
+          </div>
+          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
+            <!--[部分テンプレート]コメント数上位-->
+            <%= render"carousel_comment", photo_comment_active: @photo_comment_active, photo_comment: @photo_comment %>
+          </div>
+        <% end %>
       </div>
-      <div class="col-sm-6 col-md-6 col-lg-6 col-xl-5">
-        <%= render"carousel_comment", photo_comment_active: @photo_comment_active, photo_comment: @photo_comment %>
-      </div>
-      <% end %>
-    </div>
     <% end %>
   </div>
+  
+  <!-- 投稿一覧メイン -->
   <div class="col-sm-12 col-md-12 col-lg-9">
     <div class="row justify-content-center">
       <div class="col-12 pt-3 pb-0">
@@ -28,9 +37,11 @@
             </span>
           </div>
           <div class="pb-2">
+            <!--[部分テンプレート]投稿写真検索-->
             <%= render "layouts/search" %>
           </div>
         </div>
+        <!--[部分テンプレート]投稿写真-->
         <%= render "photo_list", photos: @photo_new %>
       </div>
       <div class="pt-1">
@@ -38,7 +49,11 @@
       </div>
     </div>
   </div>
+  
+  <!--ユーザータブ-->
   <div class="col-lg-3 d-none d-lg-block">
+    <!-- [部分テンプレート] ユーザータブ -->
     <%= render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers %>
   </div>
+  
 </div>

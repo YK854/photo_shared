@@ -1,6 +1,9 @@
-<!--いいね上位-->
 <div class="text-center mb-3">
-  <div class="h4 m-0 pb-2"><i class="bi bi-balloon-heart-fill color-like"></i>いいね数上位</div>
+  <div class="h4 m-0 pb-2">
+    <i class="bi bi-balloon-heart-fill color-like"></i>
+    いいね数上位
+  </div>
+  
   <div id="good_upper" class="carousel slide" data-ride="false" data-interval="5000">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -22,6 +25,7 @@
           </div>
         </div>
       </div>
+      
       <% photo_like.each do |like| %>
         <div class="carousel-item">
           <div class="card border-card in-shadow mb-3">
@@ -44,6 +48,7 @@
         </div>
       <% end %>
     </div>
+    
     <a class="carousel-control-prev" href="#good_upper" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -52,5 +57,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
+    
   </div>
 </div>

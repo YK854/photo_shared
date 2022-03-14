@@ -1,35 +1,40 @@
 <div class="side-tab-wrap">
   <% if user_signed_in? %>
+  
+    <!-- [tab]フォロ一覧 -->
     <input type="radio" name="side-tab" id="tab-02" class="tab-swich" checked>
     <label for="tab-02" class="tab-label"><i class="bi bi-person-heart"></i></label>
     <div class="tab-content">
+      <!-- [部分テンプレート]フォロ一覧 -->
       <%= render "relationships/followings", user_followings: user_followings %>
       <div class="side-page">
         <%= paginate user_followings, :param_name => "side_followings" %>
       </div>
     </div>
-  <% end %>
-  <% if user_signed_in? %>
+
+    <!-- [tab]フォロワー一覧 -->
     <input type="radio" name="side-tab" id="tab-03" class="tab-swich" checked>
     <label for="tab-03" class="tab-label"><i class="bi bi-person-plus-fill"></i></label>
     <div class="tab-content">
+      <!-- [部分テンプレート]フォロワ一覧 -->
       <%= render "relationships/followers", user_followers: user_followers %>
       <div class="side-page">
         <%= paginate user_followers, :param_name => "side_followers" %>
       </div>
     </div>
-  <% end %>
-  <% if user_signed_in? %>
+
+    <!-- [tab]登録ユーザ一覧 -->
     <input type="radio" name="side-tab" id="tab-01" class="tab-swich" checked>
     <label for="tab-01" class="tab-label"><i class="bi bi-people-fill"></i></label>
     <div class="tab-content">
+      <!-- [部分テンプレート]登録ユーザ一覧 -->
       <%= render "users/user_list", users: users %>
       <div class="side-page">
         <%= paginate users, :param_name => "side_user" %>
       </div>
     </div>
-  <% end %>
-  <% unless user_signed_in? %>
+  <% else %>
+    <!-- [部分テンプレート]登録ユーザ一覧 -->
     <%= render "users/user_list", users: users %>
     <%= paginate users, :param_name => "side_user" %>
   <% end %>

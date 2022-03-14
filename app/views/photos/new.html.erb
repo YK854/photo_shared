@@ -1,15 +1,18 @@
 <div class="row justify-content-center pb-3">
-  <!--エラーメッセージここから-->
+  
+  <!-- エラーメッセージ -->
   <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+    <!-- [部分テンプレート]エラーメッセージ -->
     <%= render "layouts/errors", obj: @photo %>
   </div>
+  
   <div class="col-12">
     <div class="text-center">
       <h3>ユーザー新規登録</h3>
     </div>
+    
     <div class="pt-4 mx-2">
       <%= form_with model:@photo, url:photos_path, local:true do |f| %>
-      <!--写真欄-->
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :picture, class: "control-label" %>
@@ -18,7 +21,7 @@
             <%= f.attachment_field :picture %>
           </div>
         </div>
-      <!--タイトル欄-->
+
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :title, class: "control-label" %>
@@ -30,7 +33,7 @@
             <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力してください" %>
           </div>
         </div>
-      <!--タグ欄-->
+
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :tag_list, class: "control-label" %>
@@ -42,7 +45,7 @@
             <%= f.text_field :tag_list, value: @photo.tag_list.join(','), placeholder: "風景，森林" ,class: "form-control" %>
           </div>
         </div>
-      <!--説明欄-->
+
         <div class="form-group row justify-content-center">
           <div class="d-none d-sm-block col-sm-4 col-md-3 text-center col-lg-2">
             <%= f.label :description, class: "control-label" %>
@@ -54,11 +57,12 @@
             <%= f.text_area :description, placeholder: "説明を入力してください(任意)", class: "form-control" %>
           </div>
         </div>
-      <!--投稿ボタン-->
+
         <div class="text-center">
           <%= f.submit "新規投稿", class: "btn btn-outline-success" %>
         </div>
       <% end %>
     </div>
+    
   </div>
 </div>

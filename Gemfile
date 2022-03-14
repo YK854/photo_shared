@@ -86,7 +86,6 @@ gem 'kaminari','~> 1.2.1'
 # erbファイルでは<% binding.pry %>
 # gem 'pry-rails'
 # gem 'pry-byebug'
-# /
 
 #日本語化対応の際に必要
 gem 'rails-i18n', '~> 5.1'

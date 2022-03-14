@@ -1,12 +1,14 @@
 <div class="row justify-content-center pd-3">
+  
+  <!-- 投稿写真詳細メイン -->
   <div class="col-sm-12 col-md-6 col-lg-5">
     <div class="text-center text-md-left">
+      <!-- [部分テンプレート]投稿削除ボタン -->
       <div class="d-none d-sm-none d-md-inline-block">
-        <!--投稿削除ボタン-->
         <%= render "delete_btn", photo: @photo %>
       </div>
       <%= attachment_image_tag(@photo, :picture, :fill, 400, 400, class: "img-thumbnail shadow") %>
-      <div class="mt-3">
+      <div class="mt-3 ml-3">
         <div id="photo_<%= @photo.id %>">
           <%= link_to user_path(@photo.user), class: "btn btn-light p-0 m-0 rounded-circle" do %>
             <%= attachment_image_tag(@photo.user, :image, :fill, 60, 60, fallback: "person-circle.svg", size: "60x60", class: "rounded-circle") %>
@@ -17,16 +19,16 @@
                 <%= @photo.user.name %>
               <% end %>
             </h4>
-            <!--いいね｜コメント-->
+            <!-- [部分テンプレート]いいね｜コメント -->
             <span class="link-comment">
               <%= render "photos/like_comment_count", photo: @photo %>
             </span>
           </div>
-          <!--いいねボタン-->
+          <!-- [部分テンプレート]いいねボタン -->
           <span class="favorite-btn">
             <%= render "favorites/favorite-btn", photo: @photo %>
           </span>
-          <!--コメント入力欄-->
+          <!-- [部分テンプレート]コメント入力欄 -->
           <div class="comment-entry">
             <%= render "comments/comment_entry", photo: @photo, comment: @comment %>
           </div>
@@ -34,18 +36,24 @@
       </div>
     </div>
   </div>
+  
+  <!-- 投稿写真詳細(リアクション) -->
   <div class="col-sm-12 col-md-6 col-lg-4">
-    <!--写真詳欄-->
+    <!-- [部分テンプレート]写真詳欄 -->
     <%= render "photo_detail", photo: @photo %>
-    <!--コメント一覧-->
+    <!-- [部分テンプレート]コメント一覧 -->
     <span class="comment-index">
       <%= render "comments/comment_index", photo: @photo %>
     </span>
   </div>
+  
+  <!--ユーザータブ-->
   <div class="col-lg-3 d-none d-lg-block">
+    <!-- [部分テンプレート] ユーザータブ -->
     <div id="user_<%= @photo.user.id %>">
       <%= render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers %>
     </div>
   </div>
+  
 </div>
 

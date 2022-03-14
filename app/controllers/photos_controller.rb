@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
   def index
     # タグをクリックした場合の分岐
     if params[:tag_name]
-      @tag_exists = "OK"
+      @tag_exists = ""
       flash.now[:info] = "「#{params[:tag_name]}」タグの絞り込みを行いました"
       @photos = Photo.tagged_with("#{params[:tag_name]}")
       @photo_new = @photos.page(params[:photo]).order("created_at DESC").per(6)

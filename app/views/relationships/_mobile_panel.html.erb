@@ -1,4 +1,5 @@
 <div class="accordion" id="accordionExample">
+  
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
@@ -9,6 +10,7 @@
     </div>
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
+        <!--[部分テンプレート]フォロ一覧-->
         <%= render "followings", user_followings: @user_followings %>
         <div class="side-page pt-3">
           <%= paginate @user_followings, :param_name => "side_followings" %>
@@ -16,6 +18,7 @@
       </div>
     </div>
   </div>
+  
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
@@ -26,6 +29,7 @@
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body">
+        <!--[部分テンプレート]フォロワ一覧-->
         <%= render "followers", user_followers: @user_followers %>
         <div class="side-page pt-3">
           <%= paginate @user_followers, :param_name => "side_followers" %>
@@ -33,4 +37,5 @@
       </div>
     </div>
   </div>
+  
 </div>

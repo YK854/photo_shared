@@ -10,18 +10,23 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body class="footer_whitespace_deletion">
-    <!--ヘッダー-->
+    <!--[部分テンプレート]ヘッダー-->
     <%= render "layouts/header" %>
     <!--コンテンツ-->
     <main>
       <div class="container">
         <div class="mt-lg-3">
-          <span id="flash"><%= render "layouts/flash" %></span>
+          
+          <!--[部分テンプレート]フラッシュメッセージ-->
+          <span id="flash">
+            <%= render "layouts/flash" %>
+          </span>
+          
           <%= yield %>
         </div>
       </div>
     </main>
-    <!--フッター-->
+    <!--[部分テンプレート]フッター-->
     <%= render "layouts/footer" %>
   </body>
 </html>

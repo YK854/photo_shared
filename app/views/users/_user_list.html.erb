@@ -6,6 +6,7 @@
         登録ユーザー数は<%= @user_all.count %>人
       </span>
     </h5>
+    <!-- [部分テンプレート]ユーザ検索欄 -->
     <%= render "layouts/search_user" %>
     <% users.each do |user| %>
       <div class="text-left p-1 pt-2 ml-2">

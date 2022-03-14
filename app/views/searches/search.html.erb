@@ -1,5 +1,7 @@
 <% if @model == "user" %>
   <div class="row justify-content-center pd-3">
+    
+    <!--投稿写真一覧-->
     <div class="col-sm-12 col-md-12 col-lg-9">
       <div class="row justify-content-center">
         <div class="col-xs-12 pt-3 pb-0">
@@ -12,9 +14,11 @@
               </span>
             </div>
             <div class="pb-2">
+              <!-- [部分テンプレート]投稿写真検索 -->
               <%= render "layouts/search" %>
             </div>
           </div>
+          <!--[部分テンプレート]投稿写真-->
           <%= render "/photos/photo_list", photos: @photo_new %>
         </div>
         <div class="pt-1">
@@ -22,22 +26,30 @@
         </div>
       </div>
     </div>
+    
+    <!--ユーザー検索結果-->
     <div class="col-lg-3 d-none d-lg-block">
       <div class="alert alert-info">
 	      "<%= @content %>"　の検索結果は<%= @records_all.count %>件見つかりました
       </div>
+      <!-- [部分テンプレート]ユーザ検索 -->
       <%= render "users/user_list", users: @records %>
       <%= paginate @records, :param_name => "side_user" %>
     </div>
   </div>
+  
 <% elsif @model == "photo" %>
+
   <div class="row justify-content-center pd-3">
+    
+    <!--投稿写真検索結果-->
     <div class="col-sm-12 col-md-12 col-lg-9">
       <div class="row justify-content-center">
         <div class="col-xs-12 pt-3 pb-0">
         	<div class="alert alert-info text-center">
         	  "<%= @content %>"　の検索結果は<%= @records_all.count %>件見つかりました
         	</div>
+        	<!--[部分テンプレート]投稿写真-->
           <%= render "photos/photo_list", photos: @records %>
         </div>
         <div class="pt-1">
@@ -45,8 +57,12 @@
         </div>
       </div>
     </div>
+    
+    <!--ユーザータブ-->
     <div class="col-lg-3 d-none d-lg-block">
+        <!-- [部分テンプレート] ユーザータブ -->
         <%= render "users/user_total", users: @users, user_followings: @user_followings, user_followers: @user_followers %>
     </div>
   </div>
+  
 <% end %>
