@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index,:show]
+  before_action :sidebar_user, only: [:index,:show]
 
   def new
     @photo = Photo.new
@@ -16,7 +17,6 @@ class PhotosController < ApplicationController
   end
 
   def index
-    # タグをクリックした場合の分岐
     if params[:tag_name]
       @tag_exists = ""
       flash.now[:info] = "「#{params[:tag_name]}」タグの絞り込みを行いました"
@@ -35,32 +35,12 @@ class PhotosController < ApplicationController
       @photo_comment_active = photo_comment.first
       @photo_comment = photo_comment.last(2)
     end
-
-		# サイドバー表示
-		@user_all = User.includes(:photos)
-		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
-    if user_signed_in?
-      followings = current_user.followings
-      @user_followings = followings.page(params[:side_followings]).order("created_at DESC").per(8)
-      followers = current_user.followers
-      @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
-    end
   end
 
   def show
     @photo = Photo.find(params[:id])
     @comment = Comment.new
     flash.now[:info] = "ログイン済みユーザーのみ「コメント返信」「いいね」が行えます" unless user_signed_in?
-
-		# サイドバー表示
-		@user_all = User.includes(:photos)
-		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
-    if user_signed_in?
-      followings = current_user.followings
-      @user_followings = followings.page(params[:side_followings]).order("created_at DESC").per(8)
-      followers = current_user.followers
-      @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
-    end
   end
 
   def destroy
@@ -71,6 +51,17 @@ class PhotosController < ApplicationController
   end
 
   private
+  
+  def sidebar_user
+    @user_all = User.includes(:photos)
+		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
+    if user_signed_in?
+      followings = current_user.followings
+      @user_followings = followings.page(params[:side_followings]).order("created_at DESC").per(8)
+      followers = current_user.followers
+      @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
+    end
+  end
 
   def photo_params
     params.require(:photo).permit(:picture, :title, :description, :tag_list)

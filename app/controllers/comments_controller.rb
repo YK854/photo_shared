@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def create
     @photo = Photo.find(params[:photo_id])
     @comment = current_user.comments.new(comment_params)
@@ -14,7 +15,6 @@ class CommentsController < ApplicationController
         followers = current_user.followers
         @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
       end
-
     else
       redirect_to photo_path(@photo)
       flash[:warning] = "コメントの返信に失敗しました"
@@ -26,7 +26,6 @@ class CommentsController < ApplicationController
     @comment = @photo.comments.find(params[:id])
     if @comment.destroy
       flash.now[:warning] = "コメントを削除しました"
-
       # サイドバー表示
       @user_all = User.all
   		@users = @user_all.page(params[:side_user]).order("created_at DESC").per(8)
@@ -36,7 +35,6 @@ class CommentsController < ApplicationController
         followers = current_user.followers
         @user_followers = followers.page(params[:side_followers]).order("created_at DESC").per(8)
       end
-
     else
       flash.now[:warning] = "コメントの削除に失敗しました"
       redirect_to photo_path(@photo)
