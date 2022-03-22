@@ -1,7 +1,9 @@
 <div class="h3 mt-5 text-center font-weight-bold">
-  <span class="d-none d-md-none d-sm-inline-block">
+  <span class="d-md-none">
     <!-- [部分テンプレート]投稿削除ボタン -->
     <%= render "delete_btn", photo: photo %>
+    <!-- [部分テンプレート]投稿編集ボタン -->
+    <%= render "edit_btn", photo: @photo %>
   </span>
   <%= photo.title %>
 </div>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "photos#index"
 
   # 投稿写真に対しての[いいね]、[コメント]
-  resources   :photos,    only: [:new, :create, :index, :show, :destroy] do
+  resources   :photos,    only: [:new, :create, :index, :show, :destroy, :edit ,:update] do
     # いいね機能の詳細ページ作成しない為id無
     resource  :favorites, only: [:create, :destroy]
     # 写真に対してのコメントの為ネスト

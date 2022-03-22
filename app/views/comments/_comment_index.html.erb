@@ -19,9 +19,10 @@
       
       <div class="col-10">
         <div class="border rounded-lg rounded-right px-3 py-2">
-          <div class="h6">
+          <span class="h6">
             <%= c.user.name %>
-          </div>
+          </span>
+          <span class="small text-muted">(<%= c.created_at.strftime("%Y年%m月%d日") %>)</span>
           <div class="text-break">
             <%= c.post_comment %>
           </div>

@@ -12,6 +12,7 @@ class RelationshipsController < ApplicationController
 	end
 
   def connection
+  	@myname = User.find(params[:user_id])
   	# フォロワーユーザ取得
 	user_followers = User.find(params[:user_id])
 	@user_followers = user_followers.followers.page(params[:side_followers]).order("created_at DESC").per(5)

@@ -4,9 +4,13 @@
   <div class="col-sm-12 col-md-6 col-lg-5">
     <div class="text-center text-md-left">
       <!-- [部分テンプレート]投稿削除ボタン -->
-      <div class="d-none d-sm-none d-md-inline-block">
+      <div class="d-none d-md-inline-block">
         <%= render "delete_btn", photo: @photo %>
       </div>
+      <!-- [部分テンプレート]投稿編集ボタン -->
+      <span class="d-none d-md-inline-block">
+        <%= render "edit_btn", photo: @photo %>
+      </span>
       <%= attachment_image_tag(@photo, :picture, :fill, 400, 400, class: "img-thumbnail shadow") %>
       <div class="mt-3 ml-3">
         <div id="photo_<%= @photo.id %>">

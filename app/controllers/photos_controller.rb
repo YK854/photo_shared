@@ -42,12 +42,24 @@ class PhotosController < ApplicationController
     @comment = Comment.new
     flash.now[:info] = "ログイン済みユーザーのみ「コメント返信」「いいね」が行えます" unless user_signed_in?
   end
+  
+  def edit
+    @photo = Photo.find(params[:id])
+  end
+  
+  def update
+    @photo = Photo.find(params[:id])
+    if @photo.update(photo_params)
+      redirect_to photo_path(@photo.id), notice: "投稿内容の編集が完了しました"
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-    redirect_to photos_path
-    flash.now[:info] = "投稿の削除に成功しました"
+    redirect_to photos_path, alert: "投稿の削除に成功しました"
   end
 
   private
